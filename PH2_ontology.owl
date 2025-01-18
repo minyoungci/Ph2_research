@@ -1,0 +1,1234 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="http://example.org/PH2_ontology.owl"
+         xmlns="http://example.org/PH2_ontology.owl#">
+
+<owl:Ontology rdf:about="http://example.org/PH2_ontology.owl"/>
+
+<owl:DatatypeProperty rdf:about="#hasArea">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Lesion"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasMeanB">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Lesion"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasDiagnosis">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Lesion"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:Class rdf:about="#Lesion">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD003">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">49876</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">95.59994787071939</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD009">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50104</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">81.19269918569375</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD016">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">73788</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">53.23440125765707</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD022">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">120053</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">38.776840228898905</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD024">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">36994</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">76.1402930204898</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD025">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">77874</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">60.05698949585227</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD035">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">64885</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">103.7648146721122</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD038">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">46389</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">57.427816939360625</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD042">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">110123</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">45.35439463145755</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD044">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">203279</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">61.50927050998874</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD045">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">39818</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">99.29745341302929</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD050">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">85741</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">68.86761292730432</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD092">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">13863</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">71.74486041982254</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD101">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">252371</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">74.33002207068165</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD103">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">40782</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">70.65810896964346</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD112">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">176011</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">111.43359790013125</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD118">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">74208</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">69.39726175075464</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD125">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">75077</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">59.24312372630766</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD132">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">28544</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">85.8426639573991</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD134">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">57608</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">66.82625676989306</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD135">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">213409</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">60.95687154712313</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD144">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">25997</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">71.27626264568988</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD146">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">66308</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">104.25541412800868</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD147">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">210231</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">87.35583715056295</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD150">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">175497</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">70.77969993789068</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD152">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">161943</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">47.54654415442471</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD156">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">25953</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">90.2387392594305</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD159">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">141624</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">60.20287521888945</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD161">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">223367</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">73.7829894299516</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD162">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">68851</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">91.54355056571437</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD175">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">101371</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">77.07265391482771</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD177">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">65931</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">69.4161471841774</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD182">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">134210</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">126.51408985917593</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD198">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">53785</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">93.09004369247931</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD200">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">70788</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">45.25088998135277</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD010">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">48061</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">60.063211335594346</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD017">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">211867</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">56.60434140286123</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD020">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">51910</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">91.3041803120786</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD039">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">33485</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">98.44372106913544</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD041">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">104283</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">88.22824429676936</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD105">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">43035</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">68.24068781224585</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD107">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">53166</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">74.59759996990557</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD108">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">61072</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">86.49759300497773</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD133">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">46221</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">72.83827697366998</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD142">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">62773</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">75.3157249135775</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD143">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">25906</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">87.80247819038061</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD160">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">237418</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">74.29371404021599</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD173">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">118120</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">64.58123941754148</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD176">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">144790</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">73.61540161613371</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD196">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">45092</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">64.38785150359266</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD197">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">115124</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">101.78278204370939</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD199">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">72171</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">50.07575064776711</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD203">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">46964</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">78.12705476535218</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD204">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">18752</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">70.61545435153583</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD206">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">41534</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">54.144243270573504</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD207">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">89916</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">84.52068597357534</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD208">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">110591</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">95.4692606089103</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD364">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">52820</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">73.93737220749716</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD365">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">58466</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">66.29988369308658</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD367">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">93125</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">113.41880268456376</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD371">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">204358</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">51.27319214319968</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD372">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">69354</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">71.93110707385298</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD374">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">39503</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">60.62291471533808</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD375">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">53733</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">92.62860811791636</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD378">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">222545</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">149.433018041295</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD379">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">95174</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">56.3619370836573</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD380">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">68120</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">84.35640046975925</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD381">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">152758</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">94.41110776522342</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD383">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">44535</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">69.25014033905917</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD384">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">53820</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">54.24986993682646</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD385">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">99342</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">132.1501781723742</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD389">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">239089</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">85.94422160785314</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD390">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">81165</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">92.09751740282141</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD392">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">61562</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">105.51145186965985</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD394">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">92437</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">106.9209515670132</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD395">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">141208</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">69.58954875077899</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD397">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">154465</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">108.36625772828796</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD399">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">83440</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">56.92267497603068</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD400">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">202376</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">108.98582341779658</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD402">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">108215</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">87.80984151919789</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD002">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">120276</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">56.100136353054644</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD004">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">85382</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">85.31558173853973</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD013">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">88626</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">88.73531469320515</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD015">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">101427</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">95.88419257199759</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD019">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">41665</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">98.04881795271811</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD021">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">58790</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">55.10059533934343</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD027">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">97375</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">76.9192297817715</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD030">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">223717</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">87.46214637242588</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD032">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">206650</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">102.10851197677232</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD033">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">127844</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">91.66240887331435</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD037">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">59491</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">132.33322687465332</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD040">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">35649</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">53.39849645151337</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD043">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">75621</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">56.7973711006202</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD047">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100769</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">51.07019023707688</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD048">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">59387</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">60.242544664657245</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD049">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">59754</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">72.57045553435754</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD057">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">181414</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">60.03215848831953</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD075">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">103220</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">47.758079829490406</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD076">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">115061</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">88.48695909126464</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD078">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">88953</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">88.03335469292773</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD120">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">155916</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">83.70827240308884</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD126">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">95609</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">90.05366649583198</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD137">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">57295</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">58.59052273322279</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD138">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">107460</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">44.855108877721946</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD139">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">45725</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">36.0608638600328</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD140">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50239</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">63.53203686379108</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD149">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">160753</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">50.31679657611367</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD153">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">194564</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">66.27511769906046</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD157">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">114197</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">54.998887886722066</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD164">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">99741</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">52.616085661864226</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD166">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">223413</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">79.401726846692</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD169">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">97884</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">56.64995300559846</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD171">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">62099</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">38.66361777162273</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD210">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">161991</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">92.3643103629214</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD347">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">237575</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">91.16205408818269</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD155">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">175434</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">61.020782744507905</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD376">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">65568</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">63.661221937530506</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD006">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">64559</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">96.28690035471429</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD008">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">51652</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">112.57291101990242</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD014">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">185664</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">91.85385966046191</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD018">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">39799</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">95.14286791125406</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD023">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">351609</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">100.71446407799573</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD031">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">300055</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">75.60136641615703</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD036">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">183908</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">57.17786066946517</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD154">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">256988</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">58.922949709714075</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD170">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">322566</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">77.51838383462609</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD226">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">119076</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">72.00764217810475</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD243">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">140358</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">72.7830191367788</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD251">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">49750</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">60.44418090452261</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD254">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">152170</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">81.06298219097063</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD256">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">93960</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">47.91832694763729</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD278">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">48383</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">59.17582621995329</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD279">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">48173</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">51.015506611587405</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD280">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">46935</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">90.65567273889421</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD304">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">66453</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">85.24788948580199</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD305">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">85796</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">80.78492004289244</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD306">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">34841</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">62.3007376366924</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD312">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">79610</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">88.82811204622534</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD328">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">24452</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">65.71110747587109</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD331">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">44016</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">83.67052889858233</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD339">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">67900</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">70.3099263622975</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD356">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">88911</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">96.0</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD360">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">62693</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">108.820538178106</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD368">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">76724</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">119.64758093947135</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD369">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">112689</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">68.59693492710025</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD370">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">129255</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">85.3753974701172</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD382">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">114640</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">92.66468073970691</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD386">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">53802</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">34.2786141779116</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD388">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">179778</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">56.3169909555118</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD393">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">232934</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">90.27360110589265</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD396">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">87128</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">49.0252157744927</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD398">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">332951</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">125.83906340572636</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD427">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">145325</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">86.19193531739205</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD430">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">85132</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">44.85489592632618</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD431">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">195061</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">76.7318172264061</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD432">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">91717</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">74.35744736526489</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD433">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">52322</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">85.76984824739115</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD434">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">87089</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">100.4823341639013</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD436">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">244426</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">92.47493719980689</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD437">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">217737</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">104.23558696960094</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD058">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">283835</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">75.36349639755491</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD061">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">298808</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">92.3482805011914</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD063">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">213510</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">52.83517399653412</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD064">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">349754</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">41.95798761415166</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD065">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">304904</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">59.32516464198567</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD080">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">304273</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">55.032227637680634</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD085">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">95640</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">88.2918025930573</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD088">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">200379</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">81.49050050154956</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD090">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">321670</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">75.34871762986911</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD091">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">293141</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">84.70379100842257</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD168">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">104854</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">49.0830488107273</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD211">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">130329</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">70.55058352323735</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD219">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">309786</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">62.76396609272207</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD240">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">412292</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">83.09794514567345</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD242">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">129636</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">65.91053411089513</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD284">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">381757</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">138.21850548909384</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD285">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">198094</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">94.85369572021364</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD348">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">329541</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">43.08844119548099</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD349">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">266015</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">58.67132680487943</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD403">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">321728</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">78.21277911776407</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD404">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">205250</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">68.97389524969549</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD405">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">72641</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">101.98209000426756</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD407">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">165573</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">63.539296866034924</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD408">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">388317</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">133.6955245327915</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD409">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">288196</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">100.34221502033338</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD410">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">241267</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">122.162517045431</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD413">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">418443</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">61.25374782228404</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD417">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">416379</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">86.1200396753919</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD418">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">250920</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">72.348214570381</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD419">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">355453</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">57.748793792709584</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD406">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">209921</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">86.48245768646301</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD411">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">421126</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">29.16722311137284</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD420">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">323073</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">139.90029807504806</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD421">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">394850</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">139.3918374066101</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD423">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">290142</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">127.19337083221319</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD424">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">434894</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">149.43585103496486</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD425">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">374967</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">142.87832529262576</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD426">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">254016</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">121.29654037540942</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD429">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">79714</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">74.52279398850892</hasMeanB>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lesion_IMD435">
+  <rdf:type rdf:resource="#Lesion"/>
+  <hasArea rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">344518</hasArea>
+  <hasMeanB rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">146.91825390835893</hasMeanB>
+</owl:NamedIndividual>
+
+
+</rdf:RDF>
