@@ -1,1 +1,8 @@
 /PH2 Dataset images
+best_vit_model.pth
+Ph2_dataset_2.csv
+PH2_dataset.xlsx
+PH2_dataset.txt
+PH2_ontology_with_individuals.owl
+PH2_ontology.owl
+PH2_tbox_only.owl
