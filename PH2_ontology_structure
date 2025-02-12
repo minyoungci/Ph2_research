@@ -1,0 +1,35 @@
+// PH2 Ontology Structure
+digraph {
+	Thing [label="owl:Thing"]
+	SkinLesion [label=SkinLesion]
+	Diagnosis [label=Diagnosis]
+	Thing -> SkinLesion
+	Thing -> Diagnosis
+	BenignLesion [label=BenignLesion]
+	MalignantLesion [label=MalignantLesion]
+	SkinLesion -> BenignLesion
+	SkinLesion -> MalignantLesion
+	HighAsymmetryLesion [label=HighAsymmetryLesion]
+	VerySuspiciousLesion [label=VerySuspiciousLesion]
+	SkinLesion -> HighAsymmetryLesion
+	SkinLesion -> VerySuspiciousLesion
+	BenignDiagnosis [label=BenignDiagnosis]
+	MalignantDiagnosis [label=MalignantDiagnosis]
+	MissingDiagnosis [label=MissingDiagnosis]
+	Diagnosis -> BenignDiagnosis
+	Diagnosis -> MalignantDiagnosis
+	Diagnosis -> MissingDiagnosis
+	BlueNevusDiagnosis [label=BlueNevusDiagnosis]
+	DysplasticNevusDiagnosis [label=DysplasticNevusDiagnosis]
+	IntradermalNevusDiagnosis [label=IntradermalNevusDiagnosis]
+	BenignDiagnosis -> BlueNevusDiagnosis
+	BenignDiagnosis -> DysplasticNevusDiagnosis
+	BenignDiagnosis -> IntradermalNevusDiagnosis
+	MelanomaDiagnosis [label=MelanomaDiagnosis]
+	NodularMelanomaDiagnosis [label=NodularMelanomaDiagnosis]
+	LentigoMalignaDiagnosis [label=LentigoMalignaDiagnosis]
+	MalignantDiagnosis -> MelanomaDiagnosis
+	MalignantDiagnosis -> NodularMelanomaDiagnosis
+	MalignantDiagnosis -> LentigoMalignaDiagnosis
+	SkinLesion -> MissingDiagnosis [label=hasDiagnosis]
+}

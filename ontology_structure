@@ -1,0 +1,33 @@
+// Ontology Structure
+digraph {
+	"PH2_ontology_with_individuals.SkinLesion" [label=SkinLesion]
+	Thing -> SkinLesion
+	"PH2_ontology_with_individuals.Diagnosis" [label=Diagnosis]
+	Thing -> Diagnosis
+	"PH2_ontology_with_individuals.BenignLesion" [label=BenignLesion]
+	SkinLesion -> BenignLesion
+	"PH2_ontology_with_individuals.MalignantLesion" [label=MalignantLesion]
+	SkinLesion -> MalignantLesion
+	"PH2_ontology_with_individuals.BenignDiagnosis" [label=BenignDiagnosis]
+	Diagnosis -> BenignDiagnosis
+	"PH2_ontology_with_individuals.MalignantDiagnosis" [label=MalignantDiagnosis]
+	Diagnosis -> MalignantDiagnosis
+	"PH2_ontology_with_individuals.BlueNevusDiagnosis" [label=BlueNevusDiagnosis]
+	BenignDiagnosis -> BlueNevusDiagnosis
+	"PH2_ontology_with_individuals.DysplasticNevusDiagnosis" [label=DysplasticNevusDiagnosis]
+	BenignDiagnosis -> DysplasticNevusDiagnosis
+	"PH2_ontology_with_individuals.IntradermalNevusDiagnosis" [label=IntradermalNevusDiagnosis]
+	BenignDiagnosis -> IntradermalNevusDiagnosis
+	"PH2_ontology_with_individuals.MelanomaDiagnosis" [label=MelanomaDiagnosis]
+	MalignantDiagnosis -> MelanomaDiagnosis
+	"PH2_ontology_with_individuals.NodularMelanomaDiagnosis" [label=NodularMelanomaDiagnosis]
+	MalignantDiagnosis -> NodularMelanomaDiagnosis
+	"PH2_ontology_with_individuals.LentigoMalignaDiagnosis" [label=LentigoMalignaDiagnosis]
+	MalignantDiagnosis -> LentigoMalignaDiagnosis
+	"PH2_ontology_with_individuals.MissingDiagnosis" [label=MissingDiagnosis]
+	Diagnosis -> MissingDiagnosis
+	"PH2_ontology_with_individuals.HighAsymmetryLesion" [label=HighAsymmetryLesion]
+	SkinLesion -> HighAsymmetryLesion
+	"PH2_ontology_with_individuals.VerySuspiciousLesion" [label=VerySuspiciousLesion]
+	SkinLesion -> VerySuspiciousLesion
+}
