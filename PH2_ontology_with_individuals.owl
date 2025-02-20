@@ -14,6 +14,11 @@
   <rdfs:range rdf:resource="#Diagnosis"/>
 </owl:ObjectProperty>
 
+<owl:ObjectProperty rdf:about="#hasImage">
+  <rdfs:domain rdf:resource="#SkinLesion"/>
+  <rdfs:range rdf:resource="#ImageData"/>
+</owl:ObjectProperty>
+
 <owl:DatatypeProperty rdf:about="#hasAsymmetry">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
   <rdfs:domain rdf:resource="#SkinLesion"/>
@@ -86,7 +91,23 @@
   <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
 </owl:DatatypeProperty>
 
+<owl:DatatypeProperty rdf:about="#hasFilePath">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#ImageData"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasTitle">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#ImageData"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
 <owl:Class rdf:about="#SkinLesion">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Diagnosis">
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
 </owl:Class>
 
@@ -119,10 +140,6 @@
       </owl:intersectionOf>
     </owl:Class>
   </owl:equivalentClass>
-</owl:Class>
-
-<owl:Class rdf:about="#Diagnosis">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
 </owl:Class>
 
 <owl:Class rdf:about="#BenignDiagnosis">
@@ -170,6 +187,18 @@
   <rdfs:subClassOf rdf:resource="#SkinLesion"/>
 </owl:Class>
 
+<owl:Class rdf:about="#ImageData">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#SuspiciousColorLesion">
+  <rdfs:subClassOf rdf:resource="#SkinLesion"/>
+</owl:Class>
+
+<owl:Class rdf:about="#PossibleDysplasticNevus">
+  <rdfs:subClassOf rdf:resource="#SkinLesion"/>
+</owl:Class>
+
 <owl:NamedIndividual rdf:about="#rule_high_asymmetry">
   <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
 </owl:NamedIndividual>
@@ -181,6 +210,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD003">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD003"/>
+  <hasImage rdf:resource="#Image_IMD003"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -202,6 +232,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD009">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD009"/>
+  <hasImage rdf:resource="#Image_IMD009"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -223,6 +254,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD016">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD016"/>
+  <hasImage rdf:resource="#Image_IMD016"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -244,6 +276,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD022">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD022"/>
+  <hasImage rdf:resource="#Image_IMD022"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -265,6 +298,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD024">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD024"/>
+  <hasImage rdf:resource="#Image_IMD024"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -286,6 +320,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD025">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD025"/>
+  <hasImage rdf:resource="#Image_IMD025"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -307,6 +342,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD035">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD035"/>
+  <hasImage rdf:resource="#Image_IMD035"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -328,6 +364,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD038">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD038"/>
+  <hasImage rdf:resource="#Image_IMD038"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -349,6 +386,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD042">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD042"/>
+  <hasImage rdf:resource="#Image_IMD042"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -370,6 +408,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD044">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD044"/>
+  <hasImage rdf:resource="#Image_IMD044"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -391,6 +430,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD045">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD045"/>
+  <hasImage rdf:resource="#Image_IMD045"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -412,6 +452,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD050">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD050"/>
+  <hasImage rdf:resource="#Image_IMD050"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -433,6 +474,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD092">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD092"/>
+  <hasImage rdf:resource="#Image_IMD092"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -454,6 +496,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD101">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD101"/>
+  <hasImage rdf:resource="#Image_IMD101"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -475,6 +518,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD103">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD103"/>
+  <hasImage rdf:resource="#Image_IMD103"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -496,6 +540,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD112">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD112"/>
+  <hasImage rdf:resource="#Image_IMD112"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -517,6 +562,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD118">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD118"/>
+  <hasImage rdf:resource="#Image_IMD118"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -538,6 +584,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD125">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD125"/>
+  <hasImage rdf:resource="#Image_IMD125"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -559,6 +606,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD132">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD132"/>
+  <hasImage rdf:resource="#Image_IMD132"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -580,6 +628,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD134">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD134"/>
+  <hasImage rdf:resource="#Image_IMD134"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -601,6 +650,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD135">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD135"/>
+  <hasImage rdf:resource="#Image_IMD135"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -622,6 +672,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD144">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD144"/>
+  <hasImage rdf:resource="#Image_IMD144"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -643,6 +694,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD146">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD146"/>
+  <hasImage rdf:resource="#Image_IMD146"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -664,6 +716,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD147">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD147"/>
+  <hasImage rdf:resource="#Image_IMD147"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -685,6 +738,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD150">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD150"/>
+  <hasImage rdf:resource="#Image_IMD150"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -706,6 +760,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD152">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD152"/>
+  <hasImage rdf:resource="#Image_IMD152"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -727,6 +782,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD156">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD156"/>
+  <hasImage rdf:resource="#Image_IMD156"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -748,6 +804,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD159">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD159"/>
+  <hasImage rdf:resource="#Image_IMD159"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -769,6 +826,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD161">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD161"/>
+  <hasImage rdf:resource="#Image_IMD161"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -790,6 +848,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD162">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD162"/>
+  <hasImage rdf:resource="#Image_IMD162"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -811,6 +870,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD175">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD175"/>
+  <hasImage rdf:resource="#Image_IMD175"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -832,6 +892,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD177">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD177"/>
+  <hasImage rdf:resource="#Image_IMD177"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -853,6 +914,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD182">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD182"/>
+  <hasImage rdf:resource="#Image_IMD182"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -874,6 +936,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD198">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD198"/>
+  <hasImage rdf:resource="#Image_IMD198"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -895,6 +958,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD200">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD200"/>
+  <hasImage rdf:resource="#Image_IMD200"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -916,6 +980,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD010">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD010"/>
+  <hasImage rdf:resource="#Image_IMD010"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -937,6 +1002,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD017">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD017"/>
+  <hasImage rdf:resource="#Image_IMD017"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -958,6 +1024,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD020">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD020"/>
+  <hasImage rdf:resource="#Image_IMD020"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -979,6 +1046,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD039">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD039"/>
+  <hasImage rdf:resource="#Image_IMD039"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -1000,6 +1068,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD041">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD041"/>
+  <hasImage rdf:resource="#Image_IMD041"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -1021,6 +1090,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD105">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD105"/>
+  <hasImage rdf:resource="#Image_IMD105"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -1042,6 +1112,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD107">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD107"/>
+  <hasImage rdf:resource="#Image_IMD107"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -1063,6 +1134,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD108">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD108"/>
+  <hasImage rdf:resource="#Image_IMD108"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -1084,6 +1156,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD133">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD133"/>
+  <hasImage rdf:resource="#Image_IMD133"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -1105,6 +1178,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD142">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD142"/>
+  <hasImage rdf:resource="#Image_IMD142"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -1126,6 +1200,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD143">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD143"/>
+  <hasImage rdf:resource="#Image_IMD143"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -1147,6 +1222,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD160">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD160"/>
+  <hasImage rdf:resource="#Image_IMD160"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -1168,6 +1244,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD173">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD173"/>
+  <hasImage rdf:resource="#Image_IMD173"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -1189,6 +1266,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD176">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD176"/>
+  <hasImage rdf:resource="#Image_IMD176"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -1210,6 +1288,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD196">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD196"/>
+  <hasImage rdf:resource="#Image_IMD196"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -1231,6 +1310,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD197">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD197"/>
+  <hasImage rdf:resource="#Image_IMD197"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -1252,6 +1332,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD199">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD199"/>
+  <hasImage rdf:resource="#Image_IMD199"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -1273,6 +1354,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD203">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD203"/>
+  <hasImage rdf:resource="#Image_IMD203"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -1294,6 +1376,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD204">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD204"/>
+  <hasImage rdf:resource="#Image_IMD204"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -1315,6 +1398,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD206">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD206"/>
+  <hasImage rdf:resource="#Image_IMD206"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -1336,6 +1420,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD207">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD207"/>
+  <hasImage rdf:resource="#Image_IMD207"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -1357,6 +1442,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD208">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD208"/>
+  <hasImage rdf:resource="#Image_IMD208"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -1378,6 +1464,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD364">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD364"/>
+  <hasImage rdf:resource="#Image_IMD364"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -1399,6 +1486,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD365">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD365"/>
+  <hasImage rdf:resource="#Image_IMD365"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -1420,6 +1508,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD367">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD367"/>
+  <hasImage rdf:resource="#Image_IMD367"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -1441,6 +1530,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD371">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD371"/>
+  <hasImage rdf:resource="#Image_IMD371"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -1462,6 +1552,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD372">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD372"/>
+  <hasImage rdf:resource="#Image_IMD372"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -1483,6 +1574,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD374">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD374"/>
+  <hasImage rdf:resource="#Image_IMD374"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -1504,6 +1596,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD375">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD375"/>
+  <hasImage rdf:resource="#Image_IMD375"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -1525,6 +1618,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD378">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD378"/>
+  <hasImage rdf:resource="#Image_IMD378"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -1546,6 +1640,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD379">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD379"/>
+  <hasImage rdf:resource="#Image_IMD379"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -1567,6 +1662,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD380">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD380"/>
+  <hasImage rdf:resource="#Image_IMD380"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -1588,6 +1684,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD381">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD381"/>
+  <hasImage rdf:resource="#Image_IMD381"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -1609,6 +1706,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD383">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD383"/>
+  <hasImage rdf:resource="#Image_IMD383"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -1630,6 +1728,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD384">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD384"/>
+  <hasImage rdf:resource="#Image_IMD384"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -1651,6 +1750,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD385">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD385"/>
+  <hasImage rdf:resource="#Image_IMD385"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -1672,6 +1772,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD389">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD389"/>
+  <hasImage rdf:resource="#Image_IMD389"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -1693,6 +1794,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD390">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD390"/>
+  <hasImage rdf:resource="#Image_IMD390"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -1714,6 +1816,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD392">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD392"/>
+  <hasImage rdf:resource="#Image_IMD392"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -1735,6 +1838,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD394">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD394"/>
+  <hasImage rdf:resource="#Image_IMD394"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -1756,6 +1860,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD395">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD395"/>
+  <hasImage rdf:resource="#Image_IMD395"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -1777,6 +1882,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD397">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD397"/>
+  <hasImage rdf:resource="#Image_IMD397"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -1798,6 +1904,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD399">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD399"/>
+  <hasImage rdf:resource="#Image_IMD399"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -1819,6 +1926,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD400">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD400"/>
+  <hasImage rdf:resource="#Image_IMD400"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -1840,6 +1948,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD402">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD402"/>
+  <hasImage rdf:resource="#Image_IMD402"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -1861,6 +1970,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD002">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD002"/>
+  <hasImage rdf:resource="#Image_IMD002"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -1882,6 +1992,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD004">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD004"/>
+  <hasImage rdf:resource="#Image_IMD004"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -1903,6 +2014,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD013">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD013"/>
+  <hasImage rdf:resource="#Image_IMD013"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -1924,6 +2036,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD015">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD015"/>
+  <hasImage rdf:resource="#Image_IMD015"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -1945,6 +2058,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD019">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD019"/>
+  <hasImage rdf:resource="#Image_IMD019"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -1966,6 +2080,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD021">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD021"/>
+  <hasImage rdf:resource="#Image_IMD021"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -1987,6 +2102,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD027">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD027"/>
+  <hasImage rdf:resource="#Image_IMD027"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -2008,6 +2124,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD030">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD030"/>
+  <hasImage rdf:resource="#Image_IMD030"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -2029,6 +2146,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD032">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD032"/>
+  <hasImage rdf:resource="#Image_IMD032"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -2050,6 +2168,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD033">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD033"/>
+  <hasImage rdf:resource="#Image_IMD033"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -2071,6 +2190,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD037">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD037"/>
+  <hasImage rdf:resource="#Image_IMD037"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -2092,6 +2212,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD040">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD040"/>
+  <hasImage rdf:resource="#Image_IMD040"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -2113,6 +2234,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD043">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD043"/>
+  <hasImage rdf:resource="#Image_IMD043"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -2134,6 +2256,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD047">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD047"/>
+  <hasImage rdf:resource="#Image_IMD047"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -2155,6 +2278,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD048">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD048"/>
+  <hasImage rdf:resource="#Image_IMD048"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -2176,6 +2300,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD049">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD049"/>
+  <hasImage rdf:resource="#Image_IMD049"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -2197,6 +2322,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD057">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD057"/>
+  <hasImage rdf:resource="#Image_IMD057"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -2218,6 +2344,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD075">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD075"/>
+  <hasImage rdf:resource="#Image_IMD075"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -2239,6 +2366,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD076">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD076"/>
+  <hasImage rdf:resource="#Image_IMD076"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -2260,6 +2388,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD078">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD078"/>
+  <hasImage rdf:resource="#Image_IMD078"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -2281,6 +2410,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD120">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD120"/>
+  <hasImage rdf:resource="#Image_IMD120"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -2302,6 +2432,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD126">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD126"/>
+  <hasImage rdf:resource="#Image_IMD126"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -2323,6 +2454,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD137">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD137"/>
+  <hasImage rdf:resource="#Image_IMD137"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -2344,6 +2476,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD138">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD138"/>
+  <hasImage rdf:resource="#Image_IMD138"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -2365,6 +2498,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD139">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD139"/>
+  <hasImage rdf:resource="#Image_IMD139"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -2386,6 +2520,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD140">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD140"/>
+  <hasImage rdf:resource="#Image_IMD140"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -2407,6 +2542,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD149">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD149"/>
+  <hasImage rdf:resource="#Image_IMD149"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -2428,6 +2564,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD153">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD153"/>
+  <hasImage rdf:resource="#Image_IMD153"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -2449,6 +2586,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD157">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD157"/>
+  <hasImage rdf:resource="#Image_IMD157"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -2470,6 +2608,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD164">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD164"/>
+  <hasImage rdf:resource="#Image_IMD164"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -2491,6 +2630,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD166">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD166"/>
+  <hasImage rdf:resource="#Image_IMD166"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -2512,6 +2652,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD169">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD169"/>
+  <hasImage rdf:resource="#Image_IMD169"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -2533,6 +2674,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD171">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD171"/>
+  <hasImage rdf:resource="#Image_IMD171"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -2554,6 +2696,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD210">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD210"/>
+  <hasImage rdf:resource="#Image_IMD210"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -2575,6 +2718,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD347">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD347"/>
+  <hasImage rdf:resource="#Image_IMD347"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -2596,6 +2740,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD155">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD155"/>
+  <hasImage rdf:resource="#Image_IMD155"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -2617,6 +2762,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD376">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD376"/>
+  <hasImage rdf:resource="#Image_IMD376"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -2638,6 +2784,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD006">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD006"/>
+  <hasImage rdf:resource="#Image_IMD006"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -2659,6 +2806,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD008">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD008"/>
+  <hasImage rdf:resource="#Image_IMD008"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -2680,6 +2828,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD014">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD014"/>
+  <hasImage rdf:resource="#Image_IMD014"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -2701,6 +2850,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD018">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD018"/>
+  <hasImage rdf:resource="#Image_IMD018"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -2722,6 +2872,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD023">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD023"/>
+  <hasImage rdf:resource="#Image_IMD023"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -2743,6 +2894,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD031">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD031"/>
+  <hasImage rdf:resource="#Image_IMD031"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -2764,6 +2916,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD036">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD036"/>
+  <hasImage rdf:resource="#Image_IMD036"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -2785,6 +2938,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD154">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD154"/>
+  <hasImage rdf:resource="#Image_IMD154"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -2806,6 +2960,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD170">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD170"/>
+  <hasImage rdf:resource="#Image_IMD170"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -2827,6 +2982,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD226">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD226"/>
+  <hasImage rdf:resource="#Image_IMD226"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -2848,6 +3004,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD243">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD243"/>
+  <hasImage rdf:resource="#Image_IMD243"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -2869,6 +3026,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD251">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD251"/>
+  <hasImage rdf:resource="#Image_IMD251"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -2890,6 +3048,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD254">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD254"/>
+  <hasImage rdf:resource="#Image_IMD254"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -2911,6 +3070,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD256">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD256"/>
+  <hasImage rdf:resource="#Image_IMD256"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -2932,6 +3092,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD278">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD278"/>
+  <hasImage rdf:resource="#Image_IMD278"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -2953,6 +3114,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD279">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD279"/>
+  <hasImage rdf:resource="#Image_IMD279"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -2974,6 +3136,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD280">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD280"/>
+  <hasImage rdf:resource="#Image_IMD280"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -2995,6 +3158,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD304">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD304"/>
+  <hasImage rdf:resource="#Image_IMD304"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -3016,6 +3180,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD305">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD305"/>
+  <hasImage rdf:resource="#Image_IMD305"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -3037,6 +3202,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD306">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD306"/>
+  <hasImage rdf:resource="#Image_IMD306"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -3058,6 +3224,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD312">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD312"/>
+  <hasImage rdf:resource="#Image_IMD312"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -3079,6 +3246,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD328">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD328"/>
+  <hasImage rdf:resource="#Image_IMD328"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -3100,6 +3268,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD331">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD331"/>
+  <hasImage rdf:resource="#Image_IMD331"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -3121,6 +3290,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD339">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD339"/>
+  <hasImage rdf:resource="#Image_IMD339"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -3142,6 +3312,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD356">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD356"/>
+  <hasImage rdf:resource="#Image_IMD356"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -3163,6 +3334,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD360">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD360"/>
+  <hasImage rdf:resource="#Image_IMD360"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -3184,6 +3356,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD368">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD368"/>
+  <hasImage rdf:resource="#Image_IMD368"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -3205,6 +3378,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD369">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD369"/>
+  <hasImage rdf:resource="#Image_IMD369"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -3226,6 +3400,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD370">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD370"/>
+  <hasImage rdf:resource="#Image_IMD370"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -3247,6 +3422,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD382">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD382"/>
+  <hasImage rdf:resource="#Image_IMD382"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -3268,6 +3444,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD386">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD386"/>
+  <hasImage rdf:resource="#Image_IMD386"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -3289,6 +3466,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD388">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD388"/>
+  <hasImage rdf:resource="#Image_IMD388"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -3310,6 +3488,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD393">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD393"/>
+  <hasImage rdf:resource="#Image_IMD393"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -3331,6 +3510,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD396">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD396"/>
+  <hasImage rdf:resource="#Image_IMD396"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -3352,6 +3532,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD398">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD398"/>
+  <hasImage rdf:resource="#Image_IMD398"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -3373,6 +3554,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD427">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD427"/>
+  <hasImage rdf:resource="#Image_IMD427"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -3394,6 +3576,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD430">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD430"/>
+  <hasImage rdf:resource="#Image_IMD430"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -3415,6 +3598,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD431">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD431"/>
+  <hasImage rdf:resource="#Image_IMD431"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -3436,6 +3620,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD432">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD432"/>
+  <hasImage rdf:resource="#Image_IMD432"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -3457,6 +3642,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD433">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD433"/>
+  <hasImage rdf:resource="#Image_IMD433"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -3478,6 +3664,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD434">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD434"/>
+  <hasImage rdf:resource="#Image_IMD434"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -3499,6 +3686,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD436">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD436"/>
+  <hasImage rdf:resource="#Image_IMD436"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -3520,6 +3708,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD437">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD437"/>
+  <hasImage rdf:resource="#Image_IMD437"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -3541,6 +3730,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD058">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD058"/>
+  <hasImage rdf:resource="#Image_IMD058"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -3562,6 +3752,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD061">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD061"/>
+  <hasImage rdf:resource="#Image_IMD061"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -3583,6 +3774,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD063">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD063"/>
+  <hasImage rdf:resource="#Image_IMD063"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -3604,6 +3796,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD064">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD064"/>
+  <hasImage rdf:resource="#Image_IMD064"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -3625,6 +3818,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD065">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD065"/>
+  <hasImage rdf:resource="#Image_IMD065"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -3646,6 +3840,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD080">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD080"/>
+  <hasImage rdf:resource="#Image_IMD080"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -3667,6 +3862,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD085">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD085"/>
+  <hasImage rdf:resource="#Image_IMD085"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -3688,6 +3884,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD088">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD088"/>
+  <hasImage rdf:resource="#Image_IMD088"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -3709,6 +3906,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD090">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD090"/>
+  <hasImage rdf:resource="#Image_IMD090"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -3730,6 +3928,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD091">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD091"/>
+  <hasImage rdf:resource="#Image_IMD091"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -3751,6 +3950,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD168">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD168"/>
+  <hasImage rdf:resource="#Image_IMD168"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -3772,6 +3972,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD211">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD211"/>
+  <hasImage rdf:resource="#Image_IMD211"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -3793,6 +3994,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD219">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD219"/>
+  <hasImage rdf:resource="#Image_IMD219"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -3814,6 +4016,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD240">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD240"/>
+  <hasImage rdf:resource="#Image_IMD240"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -3835,6 +4038,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD242">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD242"/>
+  <hasImage rdf:resource="#Image_IMD242"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -3856,6 +4060,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD284">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD284"/>
+  <hasImage rdf:resource="#Image_IMD284"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -3877,6 +4082,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD285">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD285"/>
+  <hasImage rdf:resource="#Image_IMD285"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -3898,6 +4104,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD348">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD348"/>
+  <hasImage rdf:resource="#Image_IMD348"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -3919,6 +4126,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD349">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD349"/>
+  <hasImage rdf:resource="#Image_IMD349"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -3940,6 +4148,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD403">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD403"/>
+  <hasImage rdf:resource="#Image_IMD403"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -3961,6 +4170,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD404">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD404"/>
+  <hasImage rdf:resource="#Image_IMD404"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -3982,6 +4192,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD405">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD405"/>
+  <hasImage rdf:resource="#Image_IMD405"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -4003,6 +4214,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD407">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD407"/>
+  <hasImage rdf:resource="#Image_IMD407"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -4024,6 +4236,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD408">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD408"/>
+  <hasImage rdf:resource="#Image_IMD408"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -4045,6 +4258,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD409">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD409"/>
+  <hasImage rdf:resource="#Image_IMD409"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -4066,6 +4280,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD410">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD410"/>
+  <hasImage rdf:resource="#Image_IMD410"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -4087,6 +4302,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD413">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD413"/>
+  <hasImage rdf:resource="#Image_IMD413"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -4108,6 +4324,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD417">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD417"/>
+  <hasImage rdf:resource="#Image_IMD417"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -4129,6 +4346,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD418">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD418"/>
+  <hasImage rdf:resource="#Image_IMD418"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -4150,6 +4368,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD419">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD419"/>
+  <hasImage rdf:resource="#Image_IMD419"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -4171,6 +4390,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD406">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD406"/>
+  <hasImage rdf:resource="#Image_IMD406"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -4192,6 +4412,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD411">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD411"/>
+  <hasImage rdf:resource="#Image_IMD411"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -4213,6 +4434,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD420">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD420"/>
+  <hasImage rdf:resource="#Image_IMD420"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -4234,6 +4456,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD421">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD421"/>
+  <hasImage rdf:resource="#Image_IMD421"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -4255,6 +4478,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD423">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD423"/>
+  <hasImage rdf:resource="#Image_IMD423"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -4276,6 +4500,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD424">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD424"/>
+  <hasImage rdf:resource="#Image_IMD424"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -4297,6 +4522,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD425">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD425"/>
+  <hasImage rdf:resource="#Image_IMD425"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -4318,6 +4544,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD426">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD426"/>
+  <hasImage rdf:resource="#Image_IMD426"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -4339,6 +4566,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD429">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD429"/>
+  <hasImage rdf:resource="#Image_IMD429"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -4360,6 +4588,7 @@
 <owl:NamedIndividual rdf:about="#Lesion_IMD435">
   <rdf:type rdf:resource="#SkinLesion"/>
   <hasDiagnosis rdf:resource="#MissingDiagnosis_IMD435"/>
+  <hasImage rdf:resource="#Image_IMD435"/>
   <hasAsymmetry rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</hasAsymmetry>
   <hasColor_White rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_White>
   <hasColor_Red rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasColor_Red>
@@ -4376,6 +4605,1214 @@
 
 <owl:NamedIndividual rdf:about="#MissingDiagnosis_IMD435">
   <rdf:type rdf:resource="#MissingDiagnosis"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD003">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD003/IMD003_Dermoscopic_Image/IMD003.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD003</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD009">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD009/IMD009_Dermoscopic_Image/IMD009.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD009</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD016">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD016/IMD016_Dermoscopic_Image/IMD016.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD016</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD022">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD022/IMD022_Dermoscopic_Image/IMD022.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD022</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD024">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD024/IMD024_Dermoscopic_Image/IMD024.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD024</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD025">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD025/IMD025_Dermoscopic_Image/IMD025.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD025</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD035">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD035/IMD035_Dermoscopic_Image/IMD035.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD035</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD038">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD038/IMD038_Dermoscopic_Image/IMD038.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD038</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD042">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD042/IMD042_Dermoscopic_Image/IMD042.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD042</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD044">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD044/IMD044_Dermoscopic_Image/IMD044.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD044</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD045">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD045/IMD045_Dermoscopic_Image/IMD045.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD045</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD050">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD050/IMD050_Dermoscopic_Image/IMD050.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD050</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD092">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD092/IMD092_Dermoscopic_Image/IMD092.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD092</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD101">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD101/IMD101_Dermoscopic_Image/IMD101.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD101</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD103">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD103/IMD103_Dermoscopic_Image/IMD103.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD103</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD112">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD112/IMD112_Dermoscopic_Image/IMD112.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD112</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD118">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD118/IMD118_Dermoscopic_Image/IMD118.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD118</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD125">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD125/IMD125_Dermoscopic_Image/IMD125.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD125</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD132">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD132/IMD132_Dermoscopic_Image/IMD132.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD132</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD134">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD134/IMD134_Dermoscopic_Image/IMD134.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD134</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD135">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD135/IMD135_Dermoscopic_Image/IMD135.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD135</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD144">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD144/IMD144_Dermoscopic_Image/IMD144.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD144</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD146">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD146/IMD146_Dermoscopic_Image/IMD146.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD146</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD147">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD147/IMD147_Dermoscopic_Image/IMD147.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD147</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD150">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD150/IMD150_Dermoscopic_Image/IMD150.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD150</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD152">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD152/IMD152_Dermoscopic_Image/IMD152.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD152</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD156">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD156/IMD156_Dermoscopic_Image/IMD156.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD156</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD159">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD159/IMD159_Dermoscopic_Image/IMD159.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD159</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD161">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD161/IMD161_Dermoscopic_Image/IMD161.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD161</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD162">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD162/IMD162_Dermoscopic_Image/IMD162.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD162</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD175">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD175/IMD175_Dermoscopic_Image/IMD175.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD175</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD177">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD177/IMD177_Dermoscopic_Image/IMD177.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD177</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD182">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD182/IMD182_Dermoscopic_Image/IMD182.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD182</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD198">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD198/IMD198_Dermoscopic_Image/IMD198.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD198</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD200">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD200/IMD200_Dermoscopic_Image/IMD200.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD200</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD010">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD010/IMD010_Dermoscopic_Image/IMD010.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD010</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD017">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD017/IMD017_Dermoscopic_Image/IMD017.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD017</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD020">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD020/IMD020_Dermoscopic_Image/IMD020.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD020</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD039">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD039/IMD039_Dermoscopic_Image/IMD039.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD039</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD041">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD041/IMD041_Dermoscopic_Image/IMD041.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD041</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD105">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD105/IMD105_Dermoscopic_Image/IMD105.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD105</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD107">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD107/IMD107_Dermoscopic_Image/IMD107.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD107</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD108">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD108/IMD108_Dermoscopic_Image/IMD108.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD108</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD133">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD133/IMD133_Dermoscopic_Image/IMD133.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD133</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD142">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD142/IMD142_Dermoscopic_Image/IMD142.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD142</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD143">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD143/IMD143_Dermoscopic_Image/IMD143.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD143</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD160">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD160/IMD160_Dermoscopic_Image/IMD160.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD160</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD173">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD173/IMD173_Dermoscopic_Image/IMD173.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD173</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD176">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD176/IMD176_Dermoscopic_Image/IMD176.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD176</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD196">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD196/IMD196_Dermoscopic_Image/IMD196.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD196</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD197">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD197/IMD197_Dermoscopic_Image/IMD197.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD197</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD199">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD199/IMD199_Dermoscopic_Image/IMD199.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD199</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD203">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD203/IMD203_Dermoscopic_Image/IMD203.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD203</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD204">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD204/IMD204_Dermoscopic_Image/IMD204.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD204</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD206">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD206/IMD206_Dermoscopic_Image/IMD206.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD206</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD207">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD207/IMD207_Dermoscopic_Image/IMD207.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD207</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD208">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD208/IMD208_Dermoscopic_Image/IMD208.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD208</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD364">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD364/IMD364_Dermoscopic_Image/IMD364.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD364</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD365">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD365/IMD365_Dermoscopic_Image/IMD365.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD365</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD367">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD367/IMD367_Dermoscopic_Image/IMD367.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD367</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD371">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD371/IMD371_Dermoscopic_Image/IMD371.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD371</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD372">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD372/IMD372_Dermoscopic_Image/IMD372.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD372</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD374">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD374/IMD374_Dermoscopic_Image/IMD374.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD374</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD375">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD375/IMD375_Dermoscopic_Image/IMD375.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD375</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD378">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD378/IMD378_Dermoscopic_Image/IMD378.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD378</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD379">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD379/IMD379_Dermoscopic_Image/IMD379.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD379</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD380">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD380/IMD380_Dermoscopic_Image/IMD380.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD380</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD381">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD381/IMD381_Dermoscopic_Image/IMD381.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD381</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD383">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD383/IMD383_Dermoscopic_Image/IMD383.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD383</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD384">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD384/IMD384_Dermoscopic_Image/IMD384.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD384</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD385">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD385/IMD385_Dermoscopic_Image/IMD385.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD385</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD389">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD389/IMD389_Dermoscopic_Image/IMD389.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD389</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD390">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD390/IMD390_Dermoscopic_Image/IMD390.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD390</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD392">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD392/IMD392_Dermoscopic_Image/IMD392.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD392</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD394">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD394/IMD394_Dermoscopic_Image/IMD394.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD394</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD395">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD395/IMD395_Dermoscopic_Image/IMD395.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD395</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD397">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD397/IMD397_Dermoscopic_Image/IMD397.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD397</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD399">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD399/IMD399_Dermoscopic_Image/IMD399.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD399</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD400">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD400/IMD400_Dermoscopic_Image/IMD400.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD400</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD402">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD402/IMD402_Dermoscopic_Image/IMD402.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD402</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD002">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD002/IMD002_Dermoscopic_Image/IMD002.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD002</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD004">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD004/IMD004_Dermoscopic_Image/IMD004.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD004</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD013">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD013/IMD013_Dermoscopic_Image/IMD013.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD013</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD015">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD015/IMD015_Dermoscopic_Image/IMD015.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD015</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD019">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD019/IMD019_Dermoscopic_Image/IMD019.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD019</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD021">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD021/IMD021_Dermoscopic_Image/IMD021.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD021</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD027">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD027/IMD027_Dermoscopic_Image/IMD027.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD027</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD030">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD030/IMD030_Dermoscopic_Image/IMD030.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD030</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD032">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD032/IMD032_Dermoscopic_Image/IMD032.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD032</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD033">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD033/IMD033_Dermoscopic_Image/IMD033.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD033</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD037">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD037/IMD037_Dermoscopic_Image/IMD037.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD037</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD040">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD040/IMD040_Dermoscopic_Image/IMD040.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD040</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD043">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD043/IMD043_Dermoscopic_Image/IMD043.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD043</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD047">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD047/IMD047_Dermoscopic_Image/IMD047.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD047</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD048">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD048/IMD048_Dermoscopic_Image/IMD048.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD048</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD049">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD049/IMD049_Dermoscopic_Image/IMD049.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD049</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD057">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD057/IMD057_Dermoscopic_Image/IMD057.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD057</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD075">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD075/IMD075_Dermoscopic_Image/IMD075.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD075</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD076">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD076/IMD076_Dermoscopic_Image/IMD076.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD076</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD078">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD078/IMD078_Dermoscopic_Image/IMD078.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD078</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD120">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD120/IMD120_Dermoscopic_Image/IMD120.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD120</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD126">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD126/IMD126_Dermoscopic_Image/IMD126.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD126</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD137">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD137/IMD137_Dermoscopic_Image/IMD137.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD137</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD138">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD138/IMD138_Dermoscopic_Image/IMD138.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD138</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD139">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD139/IMD139_Dermoscopic_Image/IMD139.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD139</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD140">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD140/IMD140_Dermoscopic_Image/IMD140.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD140</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD149">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD149/IMD149_Dermoscopic_Image/IMD149.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD149</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD153">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD153/IMD153_Dermoscopic_Image/IMD153.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD153</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD157">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD157/IMD157_Dermoscopic_Image/IMD157.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD157</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD164">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD164/IMD164_Dermoscopic_Image/IMD164.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD164</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD166">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD166/IMD166_Dermoscopic_Image/IMD166.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD166</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD169">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD169/IMD169_Dermoscopic_Image/IMD169.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD169</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD171">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD171/IMD171_Dermoscopic_Image/IMD171.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD171</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD210">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD210/IMD210_Dermoscopic_Image/IMD210.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD210</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD347">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD347/IMD347_Dermoscopic_Image/IMD347.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD347</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD155">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD155/IMD155_Dermoscopic_Image/IMD155.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD155</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD376">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD376/IMD376_Dermoscopic_Image/IMD376.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD376</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD006">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD006/IMD006_Dermoscopic_Image/IMD006.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD006</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD008">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD008/IMD008_Dermoscopic_Image/IMD008.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD008</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD014">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD014/IMD014_Dermoscopic_Image/IMD014.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD014</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD018">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD018/IMD018_Dermoscopic_Image/IMD018.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD018</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD023">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD023/IMD023_Dermoscopic_Image/IMD023.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD023</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD031">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD031/IMD031_Dermoscopic_Image/IMD031.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD031</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD036">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD036/IMD036_Dermoscopic_Image/IMD036.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD036</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD154">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD154/IMD154_Dermoscopic_Image/IMD154.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD154</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD170">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD170/IMD170_Dermoscopic_Image/IMD170.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD170</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD226">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD226/IMD226_Dermoscopic_Image/IMD226.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD226</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD243">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD243/IMD243_Dermoscopic_Image/IMD243.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD243</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD251">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD251/IMD251_Dermoscopic_Image/IMD251.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD251</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD254">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD254/IMD254_Dermoscopic_Image/IMD254.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD254</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD256">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD256/IMD256_Dermoscopic_Image/IMD256.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD256</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD278">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD278/IMD278_Dermoscopic_Image/IMD278.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD278</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD279">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD279/IMD279_Dermoscopic_Image/IMD279.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD279</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD280">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD280/IMD280_Dermoscopic_Image/IMD280.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD280</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD304">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD304/IMD304_Dermoscopic_Image/IMD304.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD304</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD305">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD305/IMD305_Dermoscopic_Image/IMD305.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD305</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD306">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD306/IMD306_Dermoscopic_Image/IMD306.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD306</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD312">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD312/IMD312_Dermoscopic_Image/IMD312.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD312</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD328">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD328/IMD328_Dermoscopic_Image/IMD328.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD328</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD331">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD331/IMD331_Dermoscopic_Image/IMD331.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD331</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD339">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD339/IMD339_Dermoscopic_Image/IMD339.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD339</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD356">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD356/IMD356_Dermoscopic_Image/IMD356.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD356</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD360">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD360/IMD360_Dermoscopic_Image/IMD360.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD360</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD368">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD368/IMD368_Dermoscopic_Image/IMD368.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD368</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD369">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD369/IMD369_Dermoscopic_Image/IMD369.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD369</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD370">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD370/IMD370_Dermoscopic_Image/IMD370.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD370</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD382">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD382/IMD382_Dermoscopic_Image/IMD382.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD382</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD386">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD386/IMD386_Dermoscopic_Image/IMD386.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD386</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD388">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD388/IMD388_Dermoscopic_Image/IMD388.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD388</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD393">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD393/IMD393_Dermoscopic_Image/IMD393.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD393</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD396">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD396/IMD396_Dermoscopic_Image/IMD396.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD396</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD398">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD398/IMD398_Dermoscopic_Image/IMD398.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD398</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD427">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD427/IMD427_Dermoscopic_Image/IMD427.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD427</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD430">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD430/IMD430_Dermoscopic_Image/IMD430.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD430</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD431">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD431/IMD431_Dermoscopic_Image/IMD431.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD431</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD432">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD432/IMD432_Dermoscopic_Image/IMD432.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD432</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD433">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD433/IMD433_Dermoscopic_Image/IMD433.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD433</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD434">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD434/IMD434_Dermoscopic_Image/IMD434.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD434</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD436">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD436/IMD436_Dermoscopic_Image/IMD436.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD436</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD437">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD437/IMD437_Dermoscopic_Image/IMD437.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD437</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD058">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD058/IMD058_Dermoscopic_Image/IMD058.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD058</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD061">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD061/IMD061_Dermoscopic_Image/IMD061.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD061</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD063">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD063/IMD063_Dermoscopic_Image/IMD063.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD063</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD064">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD064/IMD064_Dermoscopic_Image/IMD064.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD064</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD065">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD065/IMD065_Dermoscopic_Image/IMD065.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD065</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD080">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD080/IMD080_Dermoscopic_Image/IMD080.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD080</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD085">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD085/IMD085_Dermoscopic_Image/IMD085.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD085</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD088">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD088/IMD088_Dermoscopic_Image/IMD088.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD088</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD090">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD090/IMD090_Dermoscopic_Image/IMD090.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD090</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD091">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD091/IMD091_Dermoscopic_Image/IMD091.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD091</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD168">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD168/IMD168_Dermoscopic_Image/IMD168.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD168</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD211">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD211/IMD211_Dermoscopic_Image/IMD211.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD211</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD219">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD219/IMD219_Dermoscopic_Image/IMD219.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD219</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD240">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD240/IMD240_Dermoscopic_Image/IMD240.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD240</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD242">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD242/IMD242_Dermoscopic_Image/IMD242.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD242</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD284">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD284/IMD284_Dermoscopic_Image/IMD284.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD284</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD285">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD285/IMD285_Dermoscopic_Image/IMD285.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD285</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD348">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD348/IMD348_Dermoscopic_Image/IMD348.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD348</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD349">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD349/IMD349_Dermoscopic_Image/IMD349.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD349</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD403">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD403/IMD403_Dermoscopic_Image/IMD403.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD403</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD404">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD404/IMD404_Dermoscopic_Image/IMD404.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD404</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD405">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD405/IMD405_Dermoscopic_Image/IMD405.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD405</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD407">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD407/IMD407_Dermoscopic_Image/IMD407.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD407</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD408">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD408/IMD408_Dermoscopic_Image/IMD408.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD408</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD409">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD409/IMD409_Dermoscopic_Image/IMD409.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD409</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD410">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD410/IMD410_Dermoscopic_Image/IMD410.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD410</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD413">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD413/IMD413_Dermoscopic_Image/IMD413.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD413</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD417">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD417/IMD417_Dermoscopic_Image/IMD417.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD417</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD418">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD418/IMD418_Dermoscopic_Image/IMD418.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD418</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD419">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD419/IMD419_Dermoscopic_Image/IMD419.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD419</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD406">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD406/IMD406_Dermoscopic_Image/IMD406.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD406</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD411">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD411/IMD411_Dermoscopic_Image/IMD411.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD411</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD420">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD420/IMD420_Dermoscopic_Image/IMD420.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD420</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD421">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD421/IMD421_Dermoscopic_Image/IMD421.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD421</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD423">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD423/IMD423_Dermoscopic_Image/IMD423.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD423</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD424">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD424/IMD424_Dermoscopic_Image/IMD424.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD424</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD425">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD425/IMD425_Dermoscopic_Image/IMD425.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD425</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD426">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD426/IMD426_Dermoscopic_Image/IMD426.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD426</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD429">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD429/IMD429_Dermoscopic_Image/IMD429.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD429</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Image_IMD435">
+  <rdf:type rdf:resource="#ImageData"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/min/main/Ph2/PH2 Dataset images/IMD435/IMD435_Dermoscopic_Image/IMD435.bmp</hasFilePath>
+  <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD435</hasTitle>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#rule_suspicious_color">
+  <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#rule_dysplastic_nevus">
+  <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
 </owl:NamedIndividual>
 
 <swrl:Imp/>
